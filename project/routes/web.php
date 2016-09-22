@@ -20,6 +20,12 @@ Route::get('festival/{id}', function($id){
     echo $festival->name;
 });
 
+Route::get('users', function(){
+    $users = App\User::all();
+    foreach($users as $user){
+        echo $user->firstname . ' gaat naar ' . $user->festival->name . '<br>';
+    }
+});
 //Route::get('hello', function(){
 //    echo 'Hello again ';
 //});
