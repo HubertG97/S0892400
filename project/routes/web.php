@@ -12,10 +12,10 @@
 */
 
 Route::get('/', function () {
-    echo 'Hello World';
+    return view('welcome');
 });
 
-Route::get('festival/{id}', function($id){
+/*Route::get('festival/{id}', function($id){
     $festival = App\Festival::find($id);
     echo $festival->name;
 });
@@ -25,7 +25,7 @@ Route::get('users', function(){
     foreach($users as $user){
         echo $user->firstname . ' gaat naar ' . $user->festival->name . '<br>';
     }
-});
+});*/
 //Route::get('hello', function(){
 //    echo 'Hello again ';
 //});
@@ -54,3 +54,6 @@ Route::get('users', function(){
 //    echo 'we have just deleted an item';
 //
 //});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
