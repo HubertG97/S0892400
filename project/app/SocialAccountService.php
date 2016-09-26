@@ -28,7 +28,7 @@ class SocialAccountService
                 $user = User::create([
                     'email' => $providerUser->getEmail(),
                     'name' => $providerUser->getName(),
-
+                    'password' => 'SocialUsers'.date('YYmmddHHiiss').rand(6,11),
                 ]);
             }
 
